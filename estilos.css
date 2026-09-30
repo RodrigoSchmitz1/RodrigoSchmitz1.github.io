@@ -1,0 +1,517 @@
+/*
+  Pagina de proyectos de Rodrigo Schmitz.
+
+  Una sola pagina estatica, sin compilar: se edita el HTML y se publica. La
+  paleta y las tipografias son las de Changuito, para que pasar de esta pagina
+  al proyecto se sienta como seguir en el mismo lugar.
+
+  Jerarquia: una banda oscura con quien soy (lo unico que tiene que quedar si
+  alguien mira cinco segundos), y debajo cada proyecto con la captura grande,
+  tres cifras y tres logros. El color de acento va solo en lo que es dato o
+  accion.
+*/
+
+:root {
+  --lienzo: #f7f7f6;
+  --papel: #ffffff;
+  --papel-hundido: #f4f2ee;
+  --tinta: #1a1815;
+  --tinta-media: #57514a;
+  --tinta-suave: #7a726a;
+  --linea: #e8e4de;
+  --linea-fuerte: #d6d0c7;
+  --acento: #0b6b4d;
+  --acento-hover: #085239;
+  --acento-tenue: #e7f5f0;
+  --sobre-oscuro: #6bc4a2;
+  --display: "Instrument Serif", Georgia, serif;
+  --sans: "Inter", system-ui, "Segoe UI", Roboto, sans-serif;
+  --radio: 14px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  overflow-x: clip;
+}
+
+body {
+  background: var(--lienzo);
+  color: var(--tinta);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--acento);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ancho {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------- Portada ---------- */
+
+.portada {
+  background: var(--tinta);
+  color: var(--papel);
+  padding: 72px 0 64px;
+}
+
+.rol {
+  margin: 0 0 22px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--sobre-oscuro);
+}
+
+.portada h1 {
+  margin: 0;
+  max-width: 17ch;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(2.6rem, 7vw, 5.2rem);
+  line-height: 1.02;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.portada h1 em {
+  font-style: italic;
+  color: var(--sobre-oscuro);
+}
+
+.bajada {
+  margin: 28px 0 0;
+  max-width: 60ch;
+  font-size: 1.06rem;
+  color: rgb(255 255 255 / 0.74);
+}
+
+.herramientas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 28px;
+}
+
+.herramientas li {
+  padding: 5px 12px;
+  border: 1px solid rgb(255 255 255 / 0.2);
+  border-radius: 999px;
+  font-size: 13px;
+  color: rgb(255 255 255 / 0.85);
+}
+
+.contacto {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin-top: 30px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.contacto a {
+  text-decoration: none;
+  border-bottom: 1px solid rgb(255 255 255 / 0.35);
+  padding-bottom: 2px;
+}
+
+.contacto a:hover {
+  border-bottom-color: var(--sobre-oscuro);
+  color: var(--sobre-oscuro);
+}
+
+/* ---------- Proyectos ---------- */
+
+.seccion {
+  margin: 56px 0 22px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--tinta-suave);
+}
+
+.proyecto {
+  padding: 24px;
+  background: var(--papel);
+  border: 1px solid var(--linea);
+  border-radius: calc(var(--radio) + 6px);
+}
+
+@media (min-width: 960px) {
+  .proyecto {
+    padding: 40px;
+  }
+}
+
+/* Orden de lectura de la tarjeta: que es y cuanto pesa (cabeza), como se ve
+   (galeria), que resolvi (resuelto). Quien mira cinco segundos se queda con la
+   cabeza y la captura; el resto es para quien sigue. */
+.cabeza {
+  display: grid;
+  gap: 28px;
+}
+
+@media (min-width: 960px) {
+  .cabeza {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: 64px;
+    align-items: end;
+  }
+}
+
+.galeria {
+  display: grid;
+  gap: 14px;
+  margin-top: 36px;
+}
+
+/* La captura va en un marco de navegador: deja claro que es un sitio que anda,
+   no un mockup. */
+.captura {
+  display: block;
+  border: 1px solid var(--linea-fuerte);
+  border-radius: var(--radio);
+  overflow: hidden;
+  text-decoration: none;
+  background: var(--papel-hundido);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.captura:hover {
+  transform: translateY(-2px);
+  border-color: var(--acento);
+  box-shadow: 0 14px 34px -18px rgb(26 24 21 / 0.45);
+}
+
+.captura img {
+  width: 100%;
+}
+
+.barra {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 12px;
+  border-bottom: 1px solid var(--linea);
+  background: var(--papel-hundido);
+}
+
+.barra i {
+  flex: none;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--linea-fuerte);
+}
+
+.barra b {
+  margin-left: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--tinta-media);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.miniaturas {
+  display: grid;
+  gap: 14px;
+}
+
+@media (min-width: 640px) {
+  .miniaturas {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.miniaturas .barra {
+  padding: 7px 10px;
+}
+
+.miniaturas .barra i {
+  width: 7px;
+  height: 7px;
+}
+
+.miniaturas .barra b {
+  margin-left: 6px;
+}
+
+.miniaturas img {
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top left;
+}
+
+.resuelto {
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid var(--linea);
+}
+
+.tipo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 10px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tinta-suave);
+}
+
+.vivo {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #0f8a63;
+  box-shadow: 0 0 0 4px var(--acento-tenue);
+}
+
+.proyecto h3 {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(2.4rem, 5vw, 3.4rem);
+  line-height: 1;
+}
+
+.que-es {
+  margin: 14px 0 0;
+  font-size: 1.08rem;
+  color: var(--tinta-media);
+}
+
+.cifras {
+  margin: 0;
+  border-top: 1px solid var(--linea);
+}
+
+.cifras div {
+  display: grid;
+  grid-template-columns: 8.2em minmax(0, 1fr);
+  align-items: baseline;
+  gap: 14px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--linea);
+}
+
+.cifras dt {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.cifras dd {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.35;
+  color: var(--tinta-suave);
+}
+
+.resuelto h4 {
+  margin: 0 0 16px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--tinta-suave);
+}
+
+.logros {
+  display: grid;
+  gap: 18px;
+}
+
+@media (min-width: 820px) {
+  .logros {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 32px;
+  }
+}
+
+.logros li {
+  padding-top: 14px;
+  border-top: 2px solid var(--acento);
+  font-size: 14.5px;
+  color: var(--tinta-media);
+}
+
+.logros strong {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 15.5px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--tinta);
+}
+
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 26px;
+}
+
+.stack li {
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--papel-hundido);
+  font-size: 12.5px;
+  color: var(--tinta-media);
+}
+
+.acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 24px 0 0;
+}
+
+.boton {
+  display: inline-block;
+  padding: 10px 18px;
+  border: 1px solid var(--linea-fuerte);
+  border-radius: 999px;
+  font-size: 14.5px;
+  font-weight: 500;
+  text-decoration: none;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.boton:hover {
+  border-color: var(--tinta);
+}
+
+.boton.principal {
+  background: var(--acento);
+  border-color: var(--acento);
+  color: var(--papel);
+}
+
+.boton.principal:hover {
+  background: var(--acento-hover);
+  border-color: var(--acento-hover);
+}
+
+/* ---------- Proximos ---------- */
+
+.proximos {
+  display: grid;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+@media (min-width: 720px) {
+  .proximos {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.proximo {
+  padding: 26px 28px;
+  border: 1px dashed var(--linea-fuerte);
+  border-radius: calc(var(--radio) + 6px);
+  color: var(--tinta-suave);
+}
+
+.proximo h3 {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 1.9rem;
+  line-height: 1.1;
+  color: var(--tinta-media);
+}
+
+.proximo p:last-child {
+  margin: 8px 0 0;
+  font-size: 14px;
+}
+
+/* ---------- Pie ---------- */
+
+.pie {
+  margin-top: 72px;
+  border-top: 1px solid var(--linea);
+  font-size: 13px;
+  color: var(--tinta-suave);
+}
+
+.pie .ancho {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 24px;
+  padding-top: 22px;
+  padding-bottom: 28px;
+}
+
+.pie p {
+  margin: 0;
+}
+
+.pie a {
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 520px) {
+  .portada {
+    padding: 52px 0 48px;
+  }
+
+  .proyecto {
+    padding: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}

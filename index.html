@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="es-AR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Rodrigo Schmitz — Proyectos de datos</title>
+    <meta
+      name="description"
+      content="Proyectos de datos de Rodrigo Schmitz: de la fuente cruda a un número en el que se puede confiar. SQL, dbt, BigQuery, Python."
+    />
+    <meta property="og:title" content="Rodrigo Schmitz — Proyectos de datos" />
+    <meta
+      property="og:description"
+      content="De la fuente cruda a un número en el que se puede confiar. Proyectos hechos de punta a punta, con el sitio andando y el código abierto."
+    />
+    <meta property="og:image" content="https://rodrigoschmitz1.github.io/img/changuito-promos.png" />
+    <meta property="og:url" content="https://rodrigoschmitz1.github.io/" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="estilos.css" />
+  </head>
+  <body>
+    <!--
+      COMO SUMAR UN PROYECTO
+      1. Copiar el bloque <article class="proyecto"> de Changuito.
+      2. Cambiar textos, cifras y links. Las capturas van en img/, de 1440 px de
+         ancho (la principal 1440x900).
+      3. Borrar una de las tarjetas "proximo".
+      El orden en la pagina es el orden de lectura: arriba, el que mas querés
+      que vean.
+    -->
+
+    <header class="portada">
+      <div class="ancho">
+        <p class="rol">Business Analyst · Datos y analítica</p>
+        <h1>Convierto datos desordenados en <em>números en los que se puede confiar.</em></h1>
+        <p class="bajada">
+          Soy Rodrigo Schmitz. Armo productos de datos de punta a punta: desde la fuente cruda hasta una pantalla que
+          alguien puede usar para decidir. Acá abajo están, andando y con el código abierto.
+        </p>
+        <ul class="herramientas" aria-label="Herramientas">
+          <li>SQL</li>
+          <li>dbt</li>
+          <li>BigQuery</li>
+          <li>Python</li>
+          <li>Visualización de datos</li>
+        </ul>
+        <nav class="contacto" aria-label="Contacto">
+          <a href="https://github.com/RodrigoSchmitz1" target="_blank" rel="noreferrer">GitHub ↗</a>
+          <!-- Cuando quieras sumarlos:
+          <a href="https://www.linkedin.com/in/..." target="_blank" rel="noreferrer">LinkedIn ↗</a>
+          <a href="mailto:...">Escribime</a>
+          -->
+        </nav>
+      </div>
+    </header>
+
+    <main class="ancho">
+      <h2 class="seccion">Proyectos</h2>
+
+      <article class="proyecto" aria-labelledby="changuito">
+        <header class="cabeza">
+          <div>
+            <p class="tipo"><span class="vivo" aria-hidden="true"></span>En producción · se actualiza todos los días</p>
+            <h3 id="changuito">Changuito</h3>
+            <p class="que-es">
+              Cuánto cuestan las cosas en los supermercados de la Argentina, hoy: las promos en un mapa, la canasta
+              básica por localidad, qué cadena es más barata y cuánto subieron los precios.
+            </p>
+            <p class="acciones">
+              <a class="boton principal" href="https://precios-sepa-api-803135877045.us-central1.run.app" target="_blank" rel="noreferrer">Ver el sitio</a>
+              <a class="boton" href="https://github.com/RodrigoSchmitz1/precios_sepa#las-decisiones-que-importan" target="_blank" rel="noreferrer">Cómo lo resolví</a>
+              <a class="boton" href="https://github.com/RodrigoSchmitz1/precios_sepa" target="_blank" rel="noreferrer">Ver el código</a>
+            </p>
+          </div>
+
+          <dl class="cifras">
+            <div>
+              <dt>14 millones</dt>
+              <dd>de precios procesados por día</dd>
+            </div>
+            <div>
+              <dt>240+</dt>
+              <dd>tests automáticos sobre los datos y el código</dd>
+            </div>
+            <div>
+              <dt>$0</dt>
+              <dd>de costo mensual, por diseño</dd>
+            </div>
+          </dl>
+        </header>
+
+        <div class="galeria">
+          <a class="captura" href="https://precios-sepa-api-803135877045.us-central1.run.app" target="_blank" rel="noreferrer" aria-label="Abrir Changuito en una pestaña nueva">
+            <span class="barra" aria-hidden="true"><i></i><i></i><i></i><b>Promos de hoy, en el mapa</b></span>
+            <img
+              src="img/changuito-promos.png"
+              alt="Changuito: mapa del Gran Buenos Aires con la cantidad de promociones vigentes en cada zona y el buscador de localidades"
+              width="1650"
+              height="1032"
+            />
+          </a>
+          <ul class="miniaturas">
+            <li>
+              <a class="captura" href="https://precios-sepa-api-803135877045.us-central1.run.app/canasta-personalizada" target="_blank" rel="noreferrer">
+                <span class="barra" aria-hidden="true"><i></i><i></i><i></i><b>Tu canasta, cotizada</b></span>
+                <img
+                  src="img/changuito-tu-canasta.png"
+                  alt="Tu canasta: costo mensual de la compra de una familia en Palermo, con el desglose por categoría"
+                  width="1650"
+                  height="1032"
+                  loading="lazy"
+                />
+              </a>
+            </li>
+            <li>
+              <a class="captura" href="https://precios-sepa-api-803135877045.us-central1.run.app/inflacion" target="_blank" rel="noreferrer">
+                <span class="barra" aria-hidden="true"><i></i><i></i><i></i><b>Inflación por categoría</b></span>
+                <img
+                  src="img/changuito-inflacion.png"
+                  alt="Inflación: cuánto subieron los precios en el período, con el ranking de categorías"
+                  width="1650"
+                  height="1032"
+                  loading="lazy"
+                />
+              </a>
+            </li>
+            <li>
+              <a class="captura" href="https://precios-sepa-api-803135877045.us-central1.run.app/mismo-producto" target="_blank" rel="noreferrer">
+                <span class="barra" aria-hidden="true"><i></i><i></i><i></i><b>El mismo producto, otra cadena</b></span>
+                <img
+                  src="img/changuito-mismo-producto.png"
+                  alt="El mismo producto: cuánto cambia el precio de un mismo código de barras entre cadenas"
+                  width="1650"
+                  height="1032"
+                  loading="lazy"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <section class="resuelto" aria-labelledby="changuito-resuelto">
+          <h4 id="changuito-resuelto">Lo que resolví</h4>
+          <ul class="logros">
+            <li>
+              <strong>Números que resisten una segunda mirada</strong>
+              Encontré y corregí ocho formas en que el dato comparaba cosas que no eran comparables. Cada una quedó
+              con un test que falla si vuelve a pasar.
+            </li>
+            <li>
+              <strong>Un pipeline que se repara solo</strong>
+              Si un día no llegan datos, los recupera al siguiente, y avisa por mail cuando algo se atrasa de verdad.
+            </li>
+            <li>
+              <strong>Una IA que interpreta, un código que cuenta</strong>
+              Describís qué comprás con tus palabras y el sitio arma tu canasta y la cotiza con precios reales de tu
+              zona.
+            </li>
+          </ul>
+          <ul class="stack" aria-label="Tecnologías">
+            <li>BigQuery</li>
+            <li>dbt</li>
+            <li>Python</li>
+            <li>FastAPI</li>
+            <li>React</li>
+            <li>GitHub Actions</li>
+            <li>Cloud Run</li>
+          </ul>
+        </section>
+      </article>
+
+      <div class="proximos">
+        <article class="proximo">
+          <p class="tipo">Proyecto 2</p>
+          <h3>En preparación</h3>
+          <p>Va a aparecer acá cuando esté andando, no antes.</p>
+        </article>
+        <article class="proximo">
+          <p class="tipo">Proyecto 3</p>
+          <h3>En preparación</h3>
+          <p>La misma regla: primero funciona, después se muestra.</p>
+        </article>
+      </div>
+    </main>
+
+    <footer class="pie">
+      <div class="ancho">
+        <p>Rodrigo Schmitz</p>
+        <p><a href="https://github.com/RodrigoSchmitz1" target="_blank" rel="noreferrer">github.com/RodrigoSchmitz1</a></p>
+      </div>
+    </footer>
+  </body>
+</html>
